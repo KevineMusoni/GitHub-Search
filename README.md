@@ -15,7 +15,7 @@ github link : https://github.com/KevineMusoni/GitHub-Search1.git
 | username searched | GitHub user details  |
 
 ## Technologies Used
-{Angular6, HTML, SCSS, TS}
+{Angular6, HTML, CSS, TS}
 ## Support and contact details
 {Run the web page once again incase of any errors / send an email: kevinenicky@gmail.com}
 Copyright (c) {2018} **{Kevine Musoni}**
