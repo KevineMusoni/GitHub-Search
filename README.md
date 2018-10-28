@@ -1,21 +1,18 @@
 # GitHub Search
-### {This is an application where users can create quotes of their choice and have those quotes voted.},22/10/2018
+### {This is a web app where users may search  GitHub usernames, and see names and descriptions of that person's public repositories.},28/10/2018
 ### By **{Kevine Musoni}**
 ## Description
-{This application will enable the user to create a quote, view other quotes written by other people, like and dislike and view the number of likes and dislikes }
+{This is a web app where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. }
 ## Setup/Installation Requirements 
-github link : https://github.com/KevineMusoni/Quote-Creator-App.git
+github link : https://github.com/KevineMusoni/GitHub-Search1.git
 ## step-by step guide
-* Create a quote 
-* click create
-* click quotes to view uploaded quotes
+* Register for a Git-Search account
+* Confirm details
+* Search for user details
 ## Behavior Driven Development
-| input           |    output            |
-|---------------  |--------------------  |
-| create quote    |  quote is uploaded   |
-| click quotes    |  view uploaded quotes|
-| click delete    |  quote is removed    | 
-| click on like/dislike buttons|upvotes/downvotes quotes|
+| input             |    output            |
+|---------------    |--------------------  |
+| username searched | GitHub user details  |
 
 ## Technologies Used
 {Angular6, HTML, SCSS, TS}
