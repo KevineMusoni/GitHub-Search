@@ -5,4 +5,8 @@ h1{
     text-align: center;
     margin-left: 370px;
     margin-bottom: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+.form-group{
+    font-family: 'Oswald', sans-serif;
 }

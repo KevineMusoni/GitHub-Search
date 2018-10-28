@@ -1,11 +1,62 @@
 #heading{
-    background-color: black;
-    color: white;
+    background-color:white;
+    opacity: 0.6;
+    color: black;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    height: 250px;
 }
 .image1{
-    height: 180px;
+    height: 100px;
 }
 #search{
     text-align: center;
+}
+#back{
+    background-image: url("/assets/image2.jpg");
+    height: 100vh;
+    background-size: cover;
+}
+nav ul{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+nav li{
+display: inline-block;
+margin: 1em;
+}
+nav a{
+font-weight: 900;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 20px;
+padding: .5em;
+color: rgb(15, 15, 15);
+}
+nav a:hover,
+nav a:focus{
+color: gray;
+}
+/* register btn */
+.button{
+display: inline-block;/*avoids merging*/
+font-size: 1.15rem;
+text-decoration:none;
+text-transform: uppercase;
+border-width: 2px;
+border-style: solid;
+padding: .5em 1.75em;
+margin-left: 600px;
+margin-top: 190px;
+}
+.button-accent{
+color: #0d0e0d;
+border-color: #0d0e0d;
+}
+.button-accent:hover,
+.button-accent:focus{
+background:gray;
+color: #232323;
 }
