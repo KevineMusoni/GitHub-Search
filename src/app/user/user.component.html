@@ -2,9 +2,24 @@
 <div id="back">
   <h1 id="heading"> GitHub Search
     <img src="assets/image.png" class="image1">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink='/users' routerLinkActive='active'>Search</a></li>
+            <li><a routerLink='/user-form' routerLinkActive='active'>Register</a></li>
+    
+          </ul>
+    
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navigation -->
+    <router-outlet></router-outlet>
+
     <nav>
       <ul>
-        <li><a class="active" href="#">Register</a></li>
+        <li><a routerLink="../user-form/user-form.component.html">Register</a></li>
         <li><a href="#">Search</a></li>
       </ul>
     </nav>
@@ -27,7 +42,7 @@
   <div class="row">
   <app-user-form (addUser)="addNewUser($event)"></app-user-form>
   </div>
-  <h3>Users:</h3>
+  <!-- <h3>Users:</h3> will appear below-->
     <div class="row" *ngFor='let user of users; let i = index'>
       <div class="row">
       <h4 id="{{i}}" appStrikethrough>{{user.name}} due on {{user.completeDate|date|uppercase}}</h4>
@@ -41,6 +56,10 @@
 </div>
 <p *ngIf='users.length > 3'>You have too many users</p>
 <div id="search">
+
+  <h1>Search GitHub User</h1>
+  <br>
+  <br>
   <label>username</label>
   <input type="text">
   <button>Search</button>

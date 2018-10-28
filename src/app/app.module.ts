@@ -12,6 +12,12 @@ import { AlertsService } from './alert-service/alerts.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'users', component: UserComponent },
+  { path: 'user-form', component: UserFormComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +32,8 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     FormsModule,
     HttpClientModule,
     NgProgressModule.forRoot(), // normal progress bar
-    NgProgressHttpModule // progress bar to load http requests
+    NgProgressHttpModule, // progress bar to load http requests
+    RouterModule.forRoot(routes)
 
   ],
   providers: [AlertsService],

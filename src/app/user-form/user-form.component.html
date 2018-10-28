@@ -1,43 +1,45 @@
+<div id="container">
+  <h1 class="heading2"><b>MY ACCOUNT</b></h1>
 <h1>Register</h1>
 <div class="container-fluid">
   <div class="row">
     <form #userForm='ngForm'>
       <!-- Name Form -->
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="newUser.name" name="name" #name="ngModel"
-          required>
-
+        <label for="name"><b>Name</b></label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newUser.name" name="name" #name="ngModel" required>
+<!-- 
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
           <p> Name is Required</p>
 
-        </div>
+        </div> -->
       </div>
       <!-- Description Input -->
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" rows="4" [(ngModel)]="newUser.description" name="description"
+        <label for="description"><b>Description</b></label>
+        <textarea class="form-control" id="description" required rows="4" [(ngModel)]="newUser.description" name="description"
           #description="ngModel" required></textarea>
-        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+        <!-- <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
           <p> Description is Required</p>
 
-        </div>
+        </div> -->
 
       </div>
       <!-- Date Input -->
       <div class="form-group">
-        <label for="complete">Date</label>
-        <input type='date' id="complete" [(ngModel)]="newUser.completeDate" name="completeDate" #completeDate="ngModel"
+        <label for="complete"><b>Date</b></label>
+        <input type='date' id="complete" required [(ngModel)]="newUser.completeDate" name="completeDate" #completeDate="ngModel"
           required>
-        <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
-          <p> Complete Date is Required</p>
-
-        </div>
+        <!-- <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+          <p> Complete Date is Required</p> -->
+<!-- 
+        </div> -->
       </div>
-      
+
       <form (ngSubmit)='submitUser()' #userForm='ngForm'>
-        <button type="Submit" class="btn btn-success btn-lg">Add User</button>
-    </form>
+        <button type="Submit" class="btn btn-success btn-lg">create</button>
+      </form>
     </form>
   </div>
+</div>
 </div>

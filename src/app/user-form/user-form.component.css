@@ -1,12 +1,27 @@
 .container-fluid{
-    text-align: center;margin-left: 400px;
+    text-align: center;
 }
 h1{
     text-align: center;
-    margin-left: 370px;
     margin-bottom: 50px;
     font-family: 'Oswald', sans-serif;
+    margin-left: 500px;
 }
 .form-group{
     font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin-left: 550px;
+}
+.heading2{
+    font-family: 'Tangerine', cursive;
+}
+#container{
+    /* background-color: rgb(180, 180, 180); */
+    height: 100vh;
+    width:500px;
+    text-align: center;
+
+}
+button{
+    margin-left: 500px;
 }
