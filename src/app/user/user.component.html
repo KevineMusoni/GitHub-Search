@@ -1,0 +1,37 @@
+<ng-progress></ng-progress>
+<h1 id="heading"> GitHub Search
+  <img src="assets/image.png" class="image1">
+</h1>
+<div class="container">
+  <div class="row">
+    <div class="text-center text-lg">
+      <p>{{depo.depositories}}</p>
+      <footer><cite>{{depo.followers}}</cite></footer>
+    </div>
+    <!-- <blockquote class="text-center text-lg">
+      <p>{{quote.quote}}</p>
+      <footer><cite>{{quote.author}}</cite></footer>
+    </blockquote> -->
+  </div>
+  <div class="row">
+  <app-user-form (addUser)="addNewUser($event)"></app-user-form>
+  </div>
+  <h3>Users:</h3>
+    <div class="row" *ngFor='let user of users; let i = index'>
+      <div class="row">
+      <h4 id="{{i}}" appStrikethrough>{{user.name}} due on {{user.completeDate|date|uppercase}}</h4>
+      <button (click)='toogleDetails(i)'>Toogle Details</button>
+      </div>
+
+      <div class="row" *ngIf="user.showDepositories">
+      <app-user-details [user]='user' (isComplete)='deleteUser($event,i)'></app-user-details>
+    </div>
+</div>
+</div>
+<p *ngIf='users.length > 3'>You have too many users</p>
+<div id="search">
+  <label>username</label>
+  <input type="text">
+  <button>Search</button>
+</div>
+
