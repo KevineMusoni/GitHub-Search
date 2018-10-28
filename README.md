@@ -7,7 +7,7 @@
 github link : https://github.com/KevineMusoni/GitHub-Search1.git
 ## step-by step guide
 * Register for a Git-Search account
-* Confirm details
+* create Account
 * Search for user details
 ## Behavior Driven Development
 | input             |    output            |
