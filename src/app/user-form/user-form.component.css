@@ -10,7 +10,7 @@ h1{
 .form-group{
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    margin-left: 550px;
+    margin-left: 480px;
 }
 .heading2{
     font-family: 'Tangerine', cursive;
@@ -24,4 +24,8 @@ h1{
 }
 button{
     margin-left: 500px;
+}
+.form-control{
+height: 40px;
+width: 200px;
 }
