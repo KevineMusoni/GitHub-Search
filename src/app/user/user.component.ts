@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../users/user.service';
 import { AlertsService } from '../alert-service/alerts.service';
-import { Depo } from '../depo-class/depo';
+import { Repo } from '../depo-class/depo';
 import { HttpClient } from '@angular/common/http';
 import { DepoRequestService } from '../depo-http/depo-request.service';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -14,12 +15,17 @@ import { DepoRequestService } from '../depo-http/depo-request.service';
 export class UserComponent implements OnInit {
   users: User[];
   alertService: AlertsService;
-  depo: Depo;
+  repo: Repo;
+  defaultCall: any;
 
-  constructor(userService: UserService, alertService: AlertsService, private http: HttpClient, private depoService: DepoRequestService) {
-    // this.users = userService.getUsers();
-    this.alertService = alertService; // make the service available to the class
+  // tslint:disable-next-line:max-line-length
+  constructor(userService: UserService, alertService: AlertsService, private http: HttpClient, private depoService: DepoRequestService, private defaultRequest: DepoRequestService) {
+    this.defaultCall = this.defaultRequest.defaultRequest();
+    this.repo = this.defaultCall;
+    console.log(this.repo);
+
   }
+
   addNewUser(user) {
     const userLength = this.users.length;
     user.id = userLength + 1;
@@ -47,17 +53,20 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit() {
-    interface ApiResponse {
-      depositories: string;
-      followers: string;
-    }
-    // tslint:disable-next-line:max-line-length
-    this.http.get <ApiResponse>('https://api.github.com/users/daneden?access_token=3767e07a8cfa5a0ab04e6c1dac7d4568bdbc6817').subscribe(data => {
-      this.depo = new Depo(data.depositories, data.followers);
-    }, err => {
-      this.depo = new Depo('no depositories', 'no followers');
-      console.log('Error occured ');
-    });
+    // this.defaultCall = this.defaultRequest.defaultRequest();
+    // this.repo = this.defaultCall.repo;
+    console.log(this.repo);
   }
+    // interface ApiResponse {
+    //   depositories: string;
+    //   followers: string;
+    // }
+    // // tslint:disable-next-line:max-line-length
+    // this.http.get <ApiResponse>('https://api.github.com/users/daneden?access_token=' + environment.apiKey).subscribe(data => {
+    //   this.repo = new Repo(data.depositories, data.followers);
+    // }, err => {
+    //   this.repo = new Repo('no depositories', 'no followers');
+    //   console.log('Error occured ');
+    // });
 
 }
