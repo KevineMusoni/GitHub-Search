@@ -31,8 +31,8 @@
 <div class="container">
   <div class="row">
     <div class="text-center text-lg">
-      <p>{{depo.depositories}}</p>
-      <footer><cite>{{depo.followers}}</cite></footer>
+      <p>{{repo.public_repos}}</p>
+      <footer><cite>{{repo.followers}}</cite></footer>
     </div>
     <!-- <blockquote class="text-center text-lg">
       <p>{{quote.quote}}</p>
@@ -64,7 +64,7 @@
   <input type="text">
   <button>Search</button>
 </div>
-
 <div class="container">
   <li>{{repo}}</li>
+  <li *ngFor="let hero of heroes">
 </div>

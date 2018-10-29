@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
   defaultCall: any;
 
   // tslint:disable-next-line:max-line-length
-  constructor(userService: UserService, alertService: AlertsService, private http: HttpClient, private depoService: DepoRequestService, private defaultRequest: DepoRequestService) {
+  constructor(userService: UserService, alertService: AlertsService, private http: HttpClient, private defaultRequest: DepoRequestService) {
     this.defaultCall = this.defaultRequest.defaultRequest();
     this.repo = this.defaultCall;
     console.log(this.repo);
@@ -50,11 +50,8 @@ export class UserComponent implements OnInit {
   toogleDetails(index) {
     this.users[index].showDepositories = !this.users[index].showDepositories;
   }
-
-
   ngOnInit() {
-    // this.defaultCall = this.defaultRequest.defaultRequest();
-    // this.repo = this.defaultCall.repo;
+
     console.log(this.repo);
   }
     // interface ApiResponse {
