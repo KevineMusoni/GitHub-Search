@@ -12,12 +12,18 @@
 }
 #search{
     text-align: center;
-    height: 100vh;
+}
+#field{
+    margin-bottom: 100px;
 }
 #back{
     background-image: url("/assets/image2.jpg");
     height: 100vh;
     background-size: cover;
+}
+.container{
+    margin-bottom: 100px;
+    text-align: center;
 }
 nav ul{
 margin: 0;

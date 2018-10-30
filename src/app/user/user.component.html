@@ -30,10 +30,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="text-center text-lg">
+    <!-- <div class="text-center text-lg">
       <p>{{repo.public_repos}}</p>
       <footer><cite>{{repo.followers}}</cite></footer>
-    </div>
+    </div> -->
     <!-- <blockquote class="text-center text-lg">
       <p>{{quote.quote}}</p>
       <footer><cite>{{quote.author}}</cite></footer>
@@ -61,10 +61,14 @@
   <br>
   <br>
   <label>username</label>
-  <input type="text">
+  <input type="text" id="field">
   <button>Search</button>
 </div>
 <div class="container">
-  <li>{{repo}}</li>
-  <li *ngFor="let hero of heroes">
+  <li>profile:{{avatar_url}}</li>
+  <li>Username:{{repo.login}}</li>
+  <li>Repositories:{{repo.public_repos}}</li>
+  <li>Followers:{{repo.followers}}</li>
+  <li>Following:{{repo.following}}</li>
+  <!-- <li *ngFor="let rep of repo"> -->
 </div>

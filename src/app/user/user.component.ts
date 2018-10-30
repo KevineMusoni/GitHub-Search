@@ -22,8 +22,6 @@ export class UserComponent implements OnInit {
   constructor(userService: UserService, alertService: AlertsService, private http: HttpClient, private defaultRequest: DepoRequestService) {
     this.defaultCall = this.defaultRequest.defaultRequest();
     this.repo = this.defaultCall;
-    console.log(this.repo);
-
   }
 
   addNewUser(user) {
@@ -51,6 +49,8 @@ export class UserComponent implements OnInit {
     this.users[index].showDepositories = !this.users[index].showDepositories;
   }
   ngOnInit() {
+    this.defaultRequest.defaultRequest();
+    this.repo = this.defaultRequest.repo;
 
     console.log(this.repo);
   }

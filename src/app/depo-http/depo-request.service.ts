@@ -7,14 +7,18 @@ import { Repo } from '../depo-class/depo';
 
 export class DepoRequestService {
   repo: Repo;
+  avatar_url: string;
   constructor(private http: HttpClient) {
-    this.repo = new Repo('', '');
+    this.repo = new Repo('', '', '', '', '');
    }
   depoRequest() {
 
     interface ApiResponse {
+      login: string;
       public_repos: string;
       followers: string;
+      avatar_url: any;
+      following: string;
 
     }
     const promise = new Promise((resolve, reject) => {
@@ -22,7 +26,10 @@ export class DepoRequestService {
 
         this.repo.public_repos = response.public_repos;
         this.repo.followers = response.followers;
-        console.log(this.repo);
+        this.repo.login = response.login;
+        this.repo.following = response.following;
+
+        // console.log(this.repo);
         console.log(response);
 
         resolve();
@@ -30,6 +37,8 @@ export class DepoRequestService {
         error => {
           this.repo.public_repos = 'no repositories';
           this.repo.followers = 'no followers';
+          this.repo.following = 'none';
+          this.repo.login = 'no login details';
           reject(error);
         }
       );
@@ -41,6 +50,9 @@ export class DepoRequestService {
     interface ApiResponse {
       public_repos: string;
       followers: string;
+      login: string;
+      following: string;
+      avatar_url: 'https://avatars3.githubusercontent.com/u/41263453?v=4';
 
     }
 
@@ -49,12 +61,17 @@ export class DepoRequestService {
 
         this.repo.public_repos = response.public_repos;
         this.repo.followers = response.followers;
+        this.repo.following = response.following;
+        this.repo.login = response.login;
+        this.avatar_url = response.avatar_url;
         console.log(response);
         resolve();
       },
         error => {
           this.repo.public_repos = 'no repositories';
           this.repo.followers = 'no followers';
+          this.repo.following = 'none';
+          this.repo.avatar_url = 'no profile photo available';
           console.log(error);
           reject(error);
         }
