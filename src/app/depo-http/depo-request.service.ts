@@ -9,6 +9,7 @@ export class DepoRequestService {
   repo: Repo;
   avatar_url: string;
   constructor(private http: HttpClient) {
+    // display parameter
     this.repo = new Repo('', '', '', '', '');
    }
   depoRequest() {
@@ -29,7 +30,6 @@ export class DepoRequestService {
         this.repo.login = response.login;
         this.repo.following = response.following;
 
-        // console.log(this.repo);
         console.log(response);
 
         resolve();
